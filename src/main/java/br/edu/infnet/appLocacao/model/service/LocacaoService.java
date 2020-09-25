@@ -30,15 +30,15 @@ public class LocacaoService {
 	public void excluir(Integer id) {
 		locacaoRepository.deleteById(id);
 	}
-	
-	public Float obterValorTotal(List<Locacao> lista) {
-		
-		Float valorTotal = 0F;
-		
-		for(Locacao locacao : lista) {
-			valorTotal = valorTotal + locacao.valorTotal2();
-		}
-		
-		return valorTotal;
-	}	
+//	
+//	public Float obterValorTotal(List<Locacao> lista) {
+//		
+//		Float valorTotal = 0F;
+//		
+//		for(Locacao locacao : lista) {
+//			valorTotal = valorTotal + locacao.valorTotal2();
+//		}
+//		
+//		return valorTotal;
+//	}	
 }

@@ -1,7 +1,6 @@
 package br.edu.infnet.appLocacao.model.negocio;
 
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -34,16 +33,16 @@ public class Locacao {
 	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
 	
-	public Float valorTotal2() {
-	    Float valor = 0F;
-	    Long dias = ChronoUnit.DAYS.between(this.getDtLocacao(), this.getDtDevolucao());
-
-	    for (Veiculo v : this.getVeiculos()) {
-	        valor = valor + (v.getValor() * dias);
-	    }
-
-	    return valor;
-	}
+//	public Float valorTotal2() {
+//	    Float valor = 0F;
+//	    Long dias = ChronoUnit.DAYS.between(this.getDtLocacao(), this.getDtDevolucao());
+//
+//	    for (Veiculo v : this.getVeiculos()) {
+//	        valor = valor + (v.getValor() * dias);
+//	    }
+//
+//	    return valor;
+//	}
 	
 	public Locacao() {
 		

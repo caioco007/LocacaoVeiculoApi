@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.infnet.appLocacao.model.negocio.Executivo;
 import br.edu.infnet.appLocacao.model.service.ExecutivoService;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/api/locacao/executivo")
@@ -27,11 +25,6 @@ public class ExecutivoController {
 		return executivoService.obterLista();
 	}
 	
-	@ApiResponses(value = {		
-			@ApiResponse(code = 200, message = "Veiculo executivo retornada com sucesso"),
-			@ApiResponse(code = 400, message = "Erro na chamada da API"),
-			@ApiResponse(code = 500, message = "Erro no processamento da chamada")
-	})			
 	@ApiOperation(value = "Obter um veiculo executivo pela chave-primária")
 	@GetMapping("/{id}")
 	public Executivo obterPorId(

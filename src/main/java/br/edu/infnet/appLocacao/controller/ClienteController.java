@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.infnet.appLocacao.model.negocio.Cliente;
 import br.edu.infnet.appLocacao.model.service.ClienteService;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/api/locacao/cliente")
@@ -39,12 +37,7 @@ public class ClienteController {
 			) {
 		clienteService.incluir(cliente);
 	}
-	
-	@ApiResponses(value = {		
-			@ApiResponse(code = 200, message = "Cliente retornada com sucesso"),
-			@ApiResponse(code = 400, message = "Erro na chamada da API"),
-			@ApiResponse(code = 500, message = "Erro no processamento da chamada")
-	})			
+			
 	@ApiOperation(value = "Obter um cliente pela chave-primária")
 	@GetMapping(value = "/{id}")
 	public Cliente obterPorId(

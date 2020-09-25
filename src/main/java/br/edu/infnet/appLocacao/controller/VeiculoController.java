@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.infnet.appLocacao.model.negocio.Veiculo;
 import br.edu.infnet.appLocacao.model.service.VeiculoService;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/api/locacao/veiculo")
@@ -28,23 +26,15 @@ public class VeiculoController {
 	public List<Veiculo> obterLista(){		
 		return veiculoService.obterLista();
 	}
-
-	@PostMapping(		
-			value = "/incluir",
-			produces = {"application/json", "application/xml"}
-			)	
-	@ApiOperation(value = "Cadastrar um veiculo")
+	
+	@ApiOperation(value = "Cadastrar um novo veiculo")
+	@PostMapping(value = "/incluir")
 	public void incluir(
 				@RequestBody Veiculo veiculo
 			) {
 		veiculoService.incluir(veiculo);
 	}
-	
-	@ApiResponses(value = {		
-			@ApiResponse(code = 200, message = "Veiculo retornada com sucesso"),
-			@ApiResponse(code = 400, message = "Erro na chamada da API"),
-			@ApiResponse(code = 500, message = "Erro no processamento da chamada")
-	})			
+		
 	@ApiOperation(value = "Obter um veiculo pela chave-primária")
 	@GetMapping("/{id}")
 	public Veiculo obterPorId(

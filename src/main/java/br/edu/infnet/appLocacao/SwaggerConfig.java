@@ -26,7 +26,7 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 		.select()
-		.apis(RequestHandlerSelectors.basePackage("br.com.infnet.appLocacao.controller"))
+		.apis(RequestHandlerSelectors.basePackage("br.edu.infnet.appLocacao.controller"))
 		.paths(PathSelectors.any())
 		.build()
 		.useDefaultResponseMessages(false)
@@ -36,7 +36,7 @@ public class SwaggerConfig {
 	
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-				.title("AppLocacao")
+				.title("AppLocacaoVeiculo")
 				.description("Sistema de Locação de Veiculos")
 				.version("1.0.0")
 				.contact(new Contact("Caio Vitor da Costa Gomes", "infnet.edu.br", "caio.gomes@al.infnet.edu.br"))

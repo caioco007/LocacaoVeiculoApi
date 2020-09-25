@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.infnet.appLocacao.model.negocio.Economico;
 import br.edu.infnet.appLocacao.model.service.EconomicoService;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/api/locacao/economico")
@@ -26,12 +24,7 @@ public class EconomicoController {
 	public List<Economico> obterLista(){		
 		return economicoService.obterLista();
 	}
-	
-	@ApiResponses(value = {		
-			@ApiResponse(code = 200, message = "Veiculo economico retornada com sucesso"),
-			@ApiResponse(code = 400, message = "Erro na chamada da API"),
-			@ApiResponse(code = 500, message = "Erro no processamento da chamada")
-	})			
+		
 	@ApiOperation(value = "Obter um veiculo economico pela chave-primária")
 	@GetMapping(value = "/{id}")
 	public Economico obterPorId(
